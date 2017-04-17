@@ -1,5 +1,5 @@
 angular.module('contactsAppDuplicates')
-	.controller('backButtonCtrl', ['$scope', '$routeParams', function($scope, $routeParams) {
+	.controller('backButtonCtrl', ['$scope', '$routeParams', function() {
 		var ctrl = this;
 
 		ctrl.t = {

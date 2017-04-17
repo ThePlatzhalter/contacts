@@ -1,5 +1,5 @@
 angular.module('contactsApp')
-.controller('findDuplicatesButtonCtrl', function($scope, ContactService, $routeParams, vCardPropertiesService) {
+.controller('findDuplicatesButtonCtrl', function() {
 	var ctrl = this;
 
 	ctrl.t = {

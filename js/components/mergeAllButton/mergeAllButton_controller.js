@@ -19,11 +19,9 @@ angular.module('contactsAppDuplicates')
 					if(duplicates[merged].merge) {
 						ContactService.create(duplicates[merged].final);
 					} else {
-						var loop = 0;
 						for(var contact in duplicates[merged].original) {
 							if(!duplicates[merged].original.hasOwnProperty(contact)) continue;
 							ContactService.create(duplicates[merged].original[contact]);
-							loop++;
 						}
 					}
 				}
