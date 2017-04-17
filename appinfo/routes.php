@@ -12,5 +12,6 @@
 return [
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
+	   ['name' => 'page#find_duplicates', 'url' => '/find-duplicates/', 'verb' => 'GET']
     ]
 ];

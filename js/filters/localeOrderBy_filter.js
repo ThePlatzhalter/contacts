@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.filter('localeOrderBy', [function () {
+var localeOrderByFilter = [function () {
 	return function (array, sortPredicate, reverseOrder) {
 		if (!Array.isArray(array)) return array;
 		if (!sortPredicate) return array;
@@ -39,4 +38,10 @@ angular.module('contactsApp')
 
 		return arrayCopy;
 	};
-}]);
+}];
+
+angular.module('contactsApp')
+.filter('localeOrderBy', localeOrderByFilter);
+
+angular.module('contactsAppDuplicates')
+.filter('localeOrderBy', localeOrderByFilter);

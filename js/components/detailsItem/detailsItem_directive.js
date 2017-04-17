@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.directive('detailsitem', ['$compile', function($compile) {
+var detailsItemDirective = ['$compile', function($compile) {
 	return {
 		scope: {},
 		controller: 'detailsItemCtrl',
@@ -17,4 +16,10 @@ angular.module('contactsApp')
 			});
 		}
 	};
-}]);
+}];
+
+angular.module('contactsApp')
+.directive('detailsitem', detailsItemDirective);
+
+angular.module('contactsAppDuplicates')
+.directive('detailsitem', detailsItemDirective);

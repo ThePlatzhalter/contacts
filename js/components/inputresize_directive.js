@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.directive('inputresize', function() {
+var inputResizeDirective = function() {
 	return {
 		restrict: 'A',
 		link : function (scope, element) {
@@ -12,4 +11,10 @@ angular.module('contactsApp')
 			});
 		}
 	};
-});
+};
+
+angular.module('contactsApp')
+.directive('inputresize', inputResizeDirective);
+
+angular.module('contactsAppDuplicates')
+.directive('inputresize', inputResizeDirective);

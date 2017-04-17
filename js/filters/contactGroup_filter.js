@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.filter('contactGroupFilter', function() {
+var contactGroupFilter = function() {
 	'use strict';
 	return function (contacts, group) {
 		if (typeof contacts === 'undefined') {
@@ -24,4 +23,10 @@ angular.module('contactsApp')
 		}
 		return filter;
 	};
-});
+};
+
+angular.module('contactsApp')
+.filter('contactGroupFilter', contactGroupFilter);
+
+angular.module('contactsAppDuplicates')
+.filter('contactGroupFilter', contactGroupFilter);

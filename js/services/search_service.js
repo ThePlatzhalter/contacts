@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.service('SearchService', function() {
+var searchService = function() {
 	var searchTerm = '';
 
 	var observerCallbacks = [];
@@ -54,4 +53,10 @@ angular.module('contactsApp')
 			}
 		});
 	}
-});
+};
+
+angular.module('contactsApp')
+.service('SearchService', searchService);
+
+angular.module('contactsAppDuplicates')
+.service('SearchService', searchService);

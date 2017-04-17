@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.filter('contactColor', function() {
+var contactColorFilter = function() {
 	return function(input) {
 		// Check if core has the new color generator
 		if(typeof input.toHsl === 'function') {
@@ -14,4 +13,10 @@ angular.module('contactsApp')
 			return 'hsl(' + hue + ', 90%, 65%)';
 		}
 	};
-});
+};
+
+angular.module('contactsApp')
+.filter('contactColor', contactColorFilter);
+
+angular.module('contactsAppDuplicates')
+.filter('contactColor', contactColorFilter);

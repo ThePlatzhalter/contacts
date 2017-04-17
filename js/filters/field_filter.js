@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.filter('fieldFilter', function() {
+var fieldFilter = function() {
 	'use strict';
 	return function (fields, contact) {
 		if (typeof fields === 'undefined') {
@@ -22,4 +21,10 @@ angular.module('contactsApp')
 		}
 		return filter;
 	};
-});
+};
+
+angular.module('contactsApp')
+.filter('fieldFilter', fieldFilter);
+
+angular.module('contactsAppDuplicates')
+.filter('fieldFilter', fieldFilter);

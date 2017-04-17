@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.service('SettingsService', function() {
+var settingsService = function() {
 	var settings = {
 		addressBooks: [
 			'testAddr'
@@ -17,4 +16,10 @@ angular.module('contactsApp')
 	this.getAll = function() {
 		return settings;
 	};
-});
+};
+
+angular.module('contactsApp')
+.service('SettingsService', settingsService);
+
+angular.module('contactsAppDuplicates')
+.service('SettingsService', settingsService);

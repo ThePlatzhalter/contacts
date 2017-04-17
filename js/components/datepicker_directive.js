@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.directive('datepicker', function() {
+var datePickerDirective = function() {
 	return {
 		restrict: 'A',
 		require : 'ngModel',
@@ -27,4 +26,10 @@ angular.module('contactsApp')
 			});
 		}
 	};
-});
+};
+
+angular.module('contactsApp')
+.directive('datepicker', datePickerDirective);
+
+angular.module('contactsAppDuplicates')
+.directive('datepicker', datePickerDirective);

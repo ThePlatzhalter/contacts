@@ -17,12 +17,19 @@ use OCP\AppFramework\Http\DataResponse;
 use OCP\AppFramework\Controller;
 
 class PageController extends Controller {
-
 	/**
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
 	 */
 	public function index() {
 		return new TemplateResponse('contacts', 'main');
+	}
+
+	/**
+	 * @NoAdminRequired
+	 * @NoCSRFRequired
+	 */
+	public function findDuplicates() {
+		return new TemplateResponse('contacts', 'findDuplicates');
 	}
 }

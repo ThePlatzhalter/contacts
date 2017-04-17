@@ -62,6 +62,9 @@ OC.L10N.register(
     "Pager" : "Pager",
     "Voice" : "Voice",
     "Social network" : "Social network",
-    "Settings" : "Settings"
+    "Settings" : "Settings",
+    "Find duplicates": "Find duplicates",
+    "Merge all": "Merge all",
+    "Back": "Back"
 },
 "nplurals=2; plural=(n != 1);");

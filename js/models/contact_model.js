@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.factory('Contact', function($filter) {
+var contactModel = function($filter) {
 	return function Contact(addressBook, vCard) {
 		angular.extend(this, {
 
@@ -343,4 +342,10 @@ angular.module('contactsApp')
 			}
 		}
 	};
-});
+};
+
+angular.module('contactsApp')
+.factory('Contact', contactModel);
+
+angular.module('contactsAppDuplicates')
+.factory('Contact', contactModel);

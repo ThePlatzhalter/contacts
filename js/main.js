@@ -22,3 +22,14 @@ angular.module('contactsApp', ['uuid4', 'angular-cache', 'ngRoute', 'ui.bootstra
 	$routeProvider.otherwise('/' + t('contacts', 'All contacts'));
 
 });
+
+angular.module('contactsAppDuplicates', ['uuid4', 'angular-cache', 'ngRoute', 'ui.bootstrap', 'ui.select', 'ngSanitize', 'ngclipboard'])
+.config(function($routeProvider) {
+
+	$routeProvider.when('/:uid', {
+		template: '<duplicatedetails></duplicatedetails>'
+	});
+
+	$routeProvider.otherwise('/-');
+
+});

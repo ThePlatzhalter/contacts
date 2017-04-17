@@ -1,0 +1,13 @@
+<div style="height: 90%" class="duplicates-list" ng-controller="duplicateListCtrl" ng-class="{loading: loading, 'mobile-show': show}">
+	<div class="duplicates-list-item"
+		 ng-repeat="contact in merged"
+		 ng-if="contact.merge == true">
+		<a class="app-content-list-item-link" ng-click="openDuplicate(contact.final.uid())">
+			<img class="app-content-list-item-icon contact__icon" ng-show="contact.final.photo()!==undefined" data-ng-src="{{contact.final.photo()}}" />
+			<div class="app-content-list-item-icon contact__icon" ng-show="contact.final.photo()===undefined" ng-style="{'background-color': (contact.final.uid() | contactColor) }">{{ contact.final.displayName() | firstCharacter }}</div>
+			<div class="app-content-list-item-star icon-star" data-starred="false"></div>
+			<div class="app-content-list-item-line-one" ng-class="{'no-line-two':!contact.final.email()}">{{ contact.final.displayName() }}</div>
+			<div class="app-content-list-item-line-two">{{contact.final.email()}}</div>
+		</a>
+	</div>
+</div>

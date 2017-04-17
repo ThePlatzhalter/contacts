@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.factory('AddressBook', function()
+var addressBookModel = function()
 {
 	return function AddressBook(data) {
 		angular.extend(this, {
@@ -67,4 +66,10 @@ angular.module('contactsApp')
 		//}
 
 	};
-});
+};
+
+angular.module('contactsApp')
+.factory('AddressBook', addressBookModel);
+
+angular.module('contactsAppDuplicates')
+.factory('AddressBook', addressBookModel);

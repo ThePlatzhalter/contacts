@@ -25,30 +25,15 @@ style('contacts', 'public/style');
 vendor_style('select2/select2');
 ?>
 
-<div id="app" ng-app="contactsApp">
+<div id="app" ng-app="contactsAppDuplicates">
 	<div id="app-navigation">
-		<newContactButton></newContactButton>
-		<findDuplicatesButton></findDuplicatesButton>
-		<ul groupList></ul>
-
-		<div id="app-settings">
-			<div id="app-settings-header">
-				<button class="settings-button"
-						data-apps-slide-toggle="#app-settings-content">
-					<?php p($l->t('Settings'));?>
-				</button>
-			</div>
-			<div id="app-settings-content">
-				<addressBookList></addressBookList>
-				<contactImport></contactImport>
-				<sortBy></sortBy>
-			</div>
-		</div>
+		<backButton></backButton>
+		<mergeAllButton></mergeAllButton>
 	</div>
 
 	<div id="app-content">
 		<div class="app-content-list">
-			<contactlist></contactlist>
+			<duplicatelist></duplicatelist>
 		</div>
 		<div class="app-content-detail" ng-view></div>
 	</div>

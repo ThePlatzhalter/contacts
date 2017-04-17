@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.controller('detailsItemCtrl', function($templateRequest, vCardPropertiesService, ContactService) {
+var detailsItemController = function($templateRequest, vCardPropertiesService, ContactService) {
 	var ctrl = this;
 
 	ctrl.meta = vCardPropertiesService.getMeta(ctrl.name);
@@ -116,4 +115,10 @@ angular.module('contactsApp')
 		ctrl.model.deleteField(ctrl.name, ctrl.data);
 		ctrl.model.updateContact();
 	};
-});
+};
+
+angular.module('contactsApp')
+.controller('detailsItemCtrl', detailsItemController);
+
+angular.module('contactsAppDuplicates')
+.controller('detailsItemCtrl', detailsItemController);

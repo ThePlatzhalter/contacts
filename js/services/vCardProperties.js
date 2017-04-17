@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.service('vCardPropertiesService', function() {
+var vCardPropertiesService = function() {
 	/**
 	 * map vCard attributes to internal attributes
 	 *
@@ -174,4 +173,10 @@ angular.module('contactsApp')
 		return this.vCardMeta[property] || this.fallbackMeta(property);
 	};
 
-});
+};
+
+angular.module('contactsApp')
+	.service('vCardPropertiesService', vCardPropertiesService);
+
+angular.module('contactsAppDuplicates')
+	.service('vCardPropertiesService', vCardPropertiesService);

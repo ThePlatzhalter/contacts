@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.service('SortByService', function () {
+var sortByService = function () {
 	var subscriptions = [];
 	var sortBy = 'sortDisplayName';
 
@@ -36,4 +35,10 @@ angular.module('contactsApp')
 			};
 		}
 	};
-});
+};
+
+angular.module('contactsApp')
+.service('SortByService', sortByService);
+
+angular.module('contactsAppDuplicates')
+.service('SortByService', sortByService);

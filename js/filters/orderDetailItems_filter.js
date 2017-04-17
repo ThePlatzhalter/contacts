@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.filter('orderDetailItems', function(vCardPropertiesService) {
+var orderDetailItems = function(vCardPropertiesService) {
 	'use strict';
 	return function(items, field, reverse) {
 
@@ -25,4 +24,10 @@ angular.module('contactsApp')
 		if(reverse) filtered.reverse();
 		return filtered;
 	};
-});
+};
+
+angular.module('contactsApp')
+.filter('orderDetailItems', orderDetailItems);
+
+angular.module('contactsAppDuplicates')
+.filter('orderDetailItems', orderDetailItems);

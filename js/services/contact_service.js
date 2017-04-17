@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.service('ContactService', function(DavClient, AddressBookService, Contact, $q, CacheFactory, uuid4) {
+var contactService = function(DavClient, AddressBookService, Contact, $q, CacheFactory, uuid4) {
 
 	var cacheFilled = false;
 
@@ -189,4 +188,10 @@ angular.module('contactsApp')
 			notifyObservers('delete', contact.uid());
 		});
 	};
-});
+};
+
+angular.module('contactsApp')
+.service('ContactService', contactService);
+
+angular.module('contactsAppDuplicates')
+.service('ContactService', contactService);

@@ -1,5 +1,4 @@
-angular.module('contactsApp')
-.factory('AddressBookService', function(DavClient, DavService, SettingsService, AddressBook, $q) {
+var addressBookService = function(DavClient, DavService, SettingsService, AddressBook, $q) {
 
 	var addressBooks = [];
 	var loadPromise = undefined;
@@ -191,4 +190,10 @@ angular.module('contactsApp')
 
 	};
 
-});
+};
+
+angular.module('contactsApp')
+.factory('AddressBookService', addressBookService);
+
+angular.module('contactsAppDuplicates')
+.factory('AddressBookService', addressBookService);

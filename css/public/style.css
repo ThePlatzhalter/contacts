@@ -345,7 +345,7 @@ li.addressBook-share-item span.shareeIdentifier {
 
 
 /* Contacts List */
-#new-contact-button {
+#new-contact-button, #find-duplicates-button {
 	margin: 14px auto; /* to have the same height than a contact*/
 	width: calc(100% - 20px) !important;
 	text-align: left;
@@ -353,7 +353,28 @@ li.addressBook-share-item span.shareeIdentifier {
 	background-position: 10px center;
 }
 
+/* Duplicates List */
 
+.duplicates-list-item {
+	position: relative;
+	min-height: 68px;
+	border-top: 1px solid #eee;
+	cursor: pointer;
+}
+.duplicates-list-item:hover,
+.duplicates-list-item:focus,
+.duplicates-list-item.active {
+	background-color: #f8f8f8;
+}
+
+.duplicates-original-items {
+	position: relative;
+}
+
+.duplicate-list-item-link {
+	display: block;
+	height: 100%;
+}
 
 /* app content list & detail view */
 /* TO BE MOVED TO CORE apps.css ONCE STANDARDIZED ACROSS APPS */
@@ -534,7 +555,8 @@ detailsitem .select2-container {
 	}
 
 	.wrapper-show:not(.mobile-show),
-	.contacts-list:not(.mobile-show) {
+	.contacts-list:not(.mobile-show),
+	.duplicates-list:not(.mobile-show) {
 		display: none;
 	}
 
